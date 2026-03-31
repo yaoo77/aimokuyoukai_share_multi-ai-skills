@@ -1,7 +1,9 @@
 #!/bin/bash
 # AI Collab セッション終了時にBash許可を削除
 
-SETTINGS_FILE="/Users/aoion/obsidian_Wrt/.claude/settings.json"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+SETTINGS_FILE="${PROJECT_ROOT}/.claude/settings.json"
 
 # tmuxセッションを終了
 tmux kill-session -t ai-collab 2>/dev/null

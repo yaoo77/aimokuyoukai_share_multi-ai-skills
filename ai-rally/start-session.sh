@@ -1,7 +1,9 @@
 #!/bin/bash
 # AI Rally セッション開始時にBash許可を追加
 
-SETTINGS_FILE="/Users/aoion/obsidian_Wrt/.claude/settings.json"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+SETTINGS_FILE="${PROJECT_ROOT}/.claude/settings.json"
 
 # 設定ファイルがなければ作成
 if [ ! -f "$SETTINGS_FILE" ]; then

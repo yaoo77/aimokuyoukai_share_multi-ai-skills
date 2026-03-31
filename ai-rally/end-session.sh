@@ -1,7 +1,9 @@
 #!/bin/bash
 # AI Rally セッション終了時にBash許可を削除
 
-SETTINGS_FILE="/Users/aoion/obsidian_Wrt/.claude/settings.json"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+SETTINGS_FILE="${PROJECT_ROOT}/.claude/settings.json"
 
 if [ ! -f "$SETTINGS_FILE" ]; then
   echo "[ai-rally] 設定ファイルが見つかりません"
